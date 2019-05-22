@@ -9,6 +9,7 @@ pipeline {
                }
             }
         }
+     }  
    stage('Execute Tests') {
       steps {
         script {
