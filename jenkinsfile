@@ -1,20 +1,22 @@
 // Declarative pipeline 
 pipeline {
- agent any
-  stages {
-  stage('Build image') {
-      steps {
-        script {
-                sh "docker build . -t 'my-testing'"
-               }
-            }
+          agent any
+                   stages {
+                            stage('Build image') {
+                                                    steps {
+                                                            echo 'Ready to build image'
+                                                            script {
+                                                                    sh "docker build . -t 'my-testing'"
+                                                                   }
+                                                          }
+                                                  }
+                           stage('Execute Tests') {
+                                                    steps {
+                                                            echo 'Run test in chrome and firefox'
+                                                            script {
+                                                                    sh "docker run -v '${workspace}/output:/workdir/output' 'my-testing'"
+                                                                   }
+                                                          }
+                                                  }     
+                          }
         }
-     }  
-   stage('Execute Tests') {
-      steps {
-        script {
-                sh "docker run -v '${workspace}/output:/workdir/output' 'my-testing'"
-        }
-      }
-    }     
-}
