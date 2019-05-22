@@ -1,0 +1,24 @@
+{
+  "name": "wdio-docker",
+  "version": "1.0.0",
+  "description": "Docker first",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio"
+  },
+  "keywords": [
+    "test",
+    "web"
+  ],
+  "author": "Harshana",
+  "license": "ISC",
+  "dependencies": {
+    "webdriverio": "^4.14.4"
+  },
+  "devDependencies": {
+    "wdio-cucumber-framework": "^2.2.8",
+    "wdio-junit-reporter": "^0.4.4",
+    "wdio-selenium-standalone-service": "0.0.12",
+    "wdio-spec-reporter": "^0.1.5"
+  }
+}
