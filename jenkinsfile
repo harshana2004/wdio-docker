@@ -13,7 +13,7 @@ pipeline {
    stage('Execute Tests') {
       steps {
         script {
-                sh "docker run -v '$(pwd)/output:/workdir/output' 'my-testing'"
+                sh "docker run -v '${workspace}/output:/workdir/output' 'my-testing'"
         }
       }
     }     
