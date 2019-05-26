@@ -19,7 +19,7 @@ pipeline {
             script {
                     //  sh "mkdir -p output"
                     // sh "docker run -v 'cd /output:/workdir/output' 'my-testing'"
-                    sh "docker run -v 'my-testing' '/workdir'"
+                    sh "docker run -v '${workspace}/output:/workdir/output''my-testing' "
                    }
               }
             }     
