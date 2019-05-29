@@ -17,8 +17,7 @@ pipeline {
         steps {
           echo 'Run test in chrome and firefox'
             script {
-                    //  sh "mkdir -p output"
-                    // sh "docker run -v 'cd /output:/workdir/output' 'my-testing'"
+                    sh "mkdir -p output"
                     sh "docker run -v '${workspace}/output:/workdir/output''my-testing'"
                    }
               }
